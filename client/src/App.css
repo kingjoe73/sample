@@ -1,0 +1,109 @@
+.App {
+  text-align: left;
+  font-size: 18px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  padding:20px 20px;
+  background-color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  /*font-size: calc(10px + 2vmin);*/
+  color: #323232;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.regionsContainer, .vpcContainer, .subnetContainer {
+  width:20%;
+  border:1px solid #323232;
+  padding:5px 5px;
+  display: inline-block;
+  overflow: auto;
+  height: 600px;
+  margin: 5px;
+}
+
+.vpcContainer {
+  width:30%;
+}
+.subnetContainer {
+  width:40%;
+}
+
+.regionHeading {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #323232;
+  text-align: center;;
+}
+.awsRegions {
+  list-style-type: none;
+  margin:10px;
+  padding:0;
+}
+.region {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+}
+.regionName {
+  min-width:150px;
+  display: inline-block;
+}
+.selectedRegion, .regionName:hover {
+  background-color: #9a9a9a;
+  color:#eee;
+}
+.optInState {
+  font-size: 12px;
+  margin:0 0 0 20px;
+}
+.notOptedIn {
+  color:#757575;
+  cursor: default;
+}
+.notOptedIn::before {
+  content:' ';
+}
+.vpcEntry, .subnetEntry {
+  font-size: 12px;
+  border:1px solid #555;
+  margin:5px;
+  cursor: pointer;
+}
+.vpcEntry:hover {
+  background:#ddd;
+}
+.subnetEntry {
+  cursor:default;
+}
+.selectedVpc {
+  background-color: #ddd;
+}
