@@ -1,52 +1,11 @@
 import AWS from 'aws-sdk';
 
-const credentials:AWS.SharedIniFileCredentials = new AWS.SharedIniFileCredentials();
+const credentials:AWS.SharedIniFileCredentials = new AWS.SharedIniFileCredentials({"filename":process.env.AWS_SHARED_CREDENTIALS_FILE});
 AWS.config.update({
     credentials: credentials,
     region:"eu-west-1"
     // region:"eu-central-1"
 });
-
-/* Initialize AWS credentials  */
-/*
-const credentials:AWS.SharedIniFileCredentials = new AWS.SharedIniFileCredentials();
-AWS.config.update({
-  credentials: credentials,
-  region:"eu-west-1"
-  // region:"eu-central-1"
-});
-
-const ec2 = new AWS.EC2();
-*/
-
-/*
-ec2.describeVpcs((err,data) => {
-    if (err) {
-        console.log("VPC ERROR: ", err);
-    } else {
-        console.log(data);
-    }
-});
-
-
-var params = {
-    Filters: [
-        {
-            Name: "vpc-id",
-            Values: [
-                "vpc-62b6db08"
-            ]
-        }
-    ]
-};
-ec2.describeSubnets(params, function(err, data) {
-    if (err) {
-        console.log("SUBNET ERROR: ", err);
-    } else {
-        console.log(data);
-    }
-});
-*/
 
 const getAllRegions = (): Promise<any> => {
     return new Promise((resolve, reject) => {
