@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the api application in http://localhost:3001
+Runs the API application in http://localhost:3001
 
 
 ### `npm run dev`
